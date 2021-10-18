@@ -13,17 +13,20 @@ class PlayerCharacter:
         print('Starting to  cast spell')
         return 'Casting...'
 
+    #Funktio shout
+    def shout(self):
+        print(f'Hello, my name is {self.name}, i am Wizard, and im {self.age} years old')
+
 #Luo olio...sisältää nimen ja iän
 player1 = PlayerCharacter('Bruce', 28)
 player2 = PlayerCharacter('Marianne', 22)
 player2.run = 'Running'
 
 print(player1.membership)
-print(player1.name)
-print(player1.age)
+print(player1.shout())
 print(player1.Spell())
 
 print(player2.membership)
-print(player2.name)
+print(player2.shout())
 print(player2.age)
 print(player2.run)
