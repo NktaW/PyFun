@@ -8,6 +8,6 @@ while answer == 'y':
     #lisätään welho
     wizards = wizards + 1
     #Lause näyttää viestin jossa näkyy lisättyjen Welhojen kokonaismäärä
-    print(str(wizards) + 'Welhojen määrä!')
+    print('Welhojen määrä on ' + str(wizards))
     #Vastaus tallettuu answer muuttujaan uudeksi arvoksi.
     answer = input('Lisätäänkö Welho ? (y/n)')
