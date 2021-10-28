@@ -7,7 +7,7 @@ def check_guess(guess, answer):
     while still_guessing and attempt < 3:
         if guess.lower() == answer.lower():
             print('Congraz! Your answer is correct.')
-            score = score + 1
+            score = score + 3 - attempt
             still_guessing = False
         else:
             if attempt < 2:
@@ -27,6 +27,10 @@ guess1 = input('How many hearts does Octopus have ? \n \
 A) Three\n B) One\n C) Seven\n \
         What is your answer ? A, B, or C')
 check_guess(guess1, 'A')
+
+guess2 = input('6 * 6 = 36? \n \
+    Yes or No')
+check_guess(guess2, 'Yes')
 
 #Show score to user
 print('Your score is ' + str(score))
