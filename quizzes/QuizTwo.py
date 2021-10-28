@@ -25,11 +25,11 @@ print('Guess the right answer')
 #Create question
 guess1 = input('How many hearts does Octopus have ? \n \
 A) Three\n B) One\n C) Seven\n \
-        What is your answer ? A, B, or C')
+        What is your answer ? A, B, or C  ')
 check_guess(guess1, 'A')
 
 guess2 = input('6 * 6 = 36? \n \
-    Yes or No')
+Yes or No  ')
 check_guess(guess2, 'Yes')
 
 #Show score to user
