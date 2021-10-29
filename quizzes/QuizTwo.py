@@ -11,7 +11,7 @@ def check_guess(guess, answer):
             still_guessing = False
         else:
             if attempt < 2:
-                guess = input('Sorry wrong answer, plase try again')
+                guess = input('Sorry wrong answer, plase try again  ')
                 attempt = attempt + 1
     if attempt == 3:
         print('The right answer is ' + answer)
