@@ -3,11 +3,15 @@ import random
 #create lives variable
 lives = 9
 #make list of words
-words = ['pizza', 'pasta', 'spoon', 'space', 'green', 'beard']
+words = ['pizza', 'pasta', 'spoon', 'space', 'green', 'beard', 'phone', 'trade']
 #create variable that choose random word from the list
 secret_word = random.choice(words)
 #create clue variable
-clue = list('??????')
+clue = []
+index = 0
+while index < len(secret_word):
+    clue.append('?')
+    index = index + 1
 #create heart sybol to show user how many lives left
 heart_symbol = u'\u2764'
 #create variable, wich contains info if user guessed word correctly
@@ -20,6 +24,16 @@ def update_clue(guessed_letter, secret_word, clue):
         if guessed_letter == secret_word[index]:
             clue[index] = guessed_letter
         index = index + 1
+
+difficulty = input('Choose difficulty level  (level 1, 2, or 3):\n 1 Eazy\n 2 Medium\n 3 Hard\n')
+difficulty = int(difficulty)
+
+if difficulty == 1:
+    lives = 9
+elif difficulty == 2:
+    lives = 6
+else:
+    lives = 4
 
 while lives > 0:
     print(clue)
