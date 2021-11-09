@@ -17,13 +17,17 @@ heart_symbol = u'\u2764'
 #create variable, wich contains info if user guessed word correctly
 guessed_word_correctly = False
 
+unknown_letters = len(secret_word)
+
 #create while loop that checks if letter exist in the guessing word.
-def update_clue(guessed_letter, secret_word, clue):
+def update_clue(guessed_letter, secret_word, clue, unknown_letters):
     index = 0
     while index < len(secret_word):
         if guessed_letter == secret_word[index]:
             clue[index] = guessed_letter
+            unknown_letters = unknown_letters - 1
         index = index + 1
+    return unknown_letters
 
 difficulty = input('Choose difficulty level  (level 1, 2, or 3):\n 1 Eazy\n 2 Medium\n 3 Hard\n')
 difficulty = int(difficulty)
@@ -46,11 +50,14 @@ while lives > 0:
         break
     #if letter exist in guessed word, clue updates
     if guess in secret_word:
-        update_clue(guess, secret_word, clue)
+        update_clue(guess, secret_word, clue, unknown_letters)
     #if answer incorrect, will lost 1 live
     else:
         print('Incorrect! you lost one live')
         lives = lives - 1
+    if unknown_letters == 0:
+        guessed_word_correctly = True
+        break
 
 if guessed_word_correctly:
     print('Congraz, you won!  Secret word was:  ' + secret_word)
