@@ -1,9 +1,14 @@
 import turtle as t
+from itertools import cycle
+
+colors = cycle(['red', 'green', 'orange', 'yellow', 'blue', 'purple'])
+
+
 
 def draw_circle(size):
-    t.pencolor('red')
+    t.pencolor(next(colors))
     t.circle(size)
-    draw_circle(size)
+    draw_circle(size + 5)
     
     
     
