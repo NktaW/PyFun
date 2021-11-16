@@ -7,7 +7,7 @@ bg_colors = cycle(['Purple', 'Peru', 'Forest Green', 'goldenrod', 'Hot pink' ])
 
 
 def draw_shape(size, angle, shift, shape):
-    #t.bgcolor(next(bg_colors))
+    t.bgcolor(next(bg_colors))
     t.pencolor(next(colors))
     next_shape = ''
     if shape == 'circle':
